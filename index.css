@@ -1,0 +1,44 @@
+body{
+    background: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 50%);
+}
+#switch{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+label{
+    display: block;
+    width: 100px;
+    height: 50px;
+    background: purple;
+    border-radius: 100px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s;
+}
+label::after{
+    content: "";
+    width: 40px;
+    height: 40px;
+    border-radius: 70px;
+    background: white;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    transition: 0.5s;
+}
+#switch:checked + label:after{
+    background: purple;
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+#switch:checked + label {
+    background: white;
+}
+label:active:after{
+    width: 60px;
+}
